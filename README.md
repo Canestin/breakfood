@@ -1,2 +1,8 @@
 # breakfood
-Prison Break : Projet de Génie Logiciel dans le cadre de l'apprentissage à l'ISEP
+
+<div align="center">
+<img src="https://github.com/Canestin/assets/blob/main/img/breakfood.png" alt="Logo BreakFood" width="300">
+</div>
+
+
+
