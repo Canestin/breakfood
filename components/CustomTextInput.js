@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 
-const GTextInput = (props) => {
+const CustomTextInput = ({ height, width, type, name }) => {
   const [item, setItem] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusedPass, setIsFocusedPass] = useState(false);
@@ -29,20 +29,20 @@ const GTextInput = (props) => {
   const inputStyle = {
     ...styles.inputStyle,
     borderWidth: isFocused ? 1 : 0,
-    height: props.height,
-    width: props.width,
+    height: height,
+    width: width,
   };
   const inputPass = {
     ...styles.inputPass,
     borderWidth: isFocusedPass ? 1 : 0,
-    height: props.height,
+    height: height,
   };
-  if (props.type == "password") {
+  if (type == "password") {
     return (
       <View style={inputPass}>
         <TextInput
           style={styles.inputStylePass}
-          placeholder={props.name}
+          placeholder={name}
           onChangeText={setItem}
           value={item}
           onFocus={handleFocusPass}
@@ -58,12 +58,12 @@ const GTextInput = (props) => {
     return (
       <TextInput
         style={inputStyle}
-        placeholder={props.name}
+        placeholder={name}
         onChangeText={setItem}
         value={item}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        secureTextEntry={props.secureTextEntry}
+        secureTextEntry={true}
       ></TextInput>
     );
   }
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GTextInput;
+export default CustomTextInput;
