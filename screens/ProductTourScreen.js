@@ -136,7 +136,7 @@ const ProductTourScreen = () => {
               </View>
               <View style={styles.login}>
                 <Text>Déjà un compte ? </Text>
-                <Pressable onPress={() => navigation.navigate("register")}>
+                <Pressable onPress={() => navigation.navigate("Login")}>
                   <Text style={{ fontWeight: "bold" }}>Se connecter </Text>
                 </Pressable>
               </View>
