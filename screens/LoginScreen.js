@@ -1,19 +1,19 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native";
-import GTextInput from "../components/GTextInput";
+import CustomTextInput from "../components/CustomTextInput";
 import SubmitButton from "../components/SubmitButton";
 import Colors from "../constants/Colors";
 import { AntDesign } from "@expo/vector-icons";
 import google from "../assets/icons/google.png";
-import backlogo from "../assets/icons/arcs.png";
+import arcIcon from "../assets/icons/arcs.png";
 import { Image } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <Image
-        source={backlogo}
+        source={arcIcon}
         style={{ position: "absolute", zIndex: 1, height: "35%", width: "65%" }}
       ></Image>
       <View style={styles.loginContainer}>
@@ -23,16 +23,20 @@ const LoginScreen = () => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.inputItems}>
-            <GTextInput name="Email" height="40%" width="100%" />
-            <GTextInput
+            <CustomTextInput name="Email" height="40%" width="100%" />
+            <CustomTextInput
               name="Password"
               type="password"
               height="40%"
               width="100%"
             />
           </View>
-
-          <Text style={styles.forgotPasswordP}>forgot password ?</Text>
+          <View style={styles.subtitleView}>
+            <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+              <Text style={styles.subtitleAccount}>Create an account</Text>
+            </TouchableOpacity>
+            <Text style={styles.subtitle}>forgot password ?</Text>
+          </View>
         </View>
         <View style={styles.submitContainer}>
           <View style={styles.sumbmitButton}>
@@ -53,7 +57,7 @@ const LoginScreen = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
@@ -72,11 +76,15 @@ const styles = StyleSheet.create({
     fontSize: 35,
   },
   loginContainer: {
-    padding: 20,
+    padding: 25,
     flex: 1,
   },
   subtitle: {
     fontSize: 15,
+  },
+  subtitleAccount: {
+    fontSize: 15,
+    fontWeight: "bold",
   },
   inputContainer: {
     width: "100%",
@@ -92,10 +100,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-around",
   },
-  forgotPasswordP: {
-    textAlign: "right",
-    fontSize: 15,
-    paddingTop: 10,
+  subtitleView: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
     flex: 0.2,
   },
   submitContainer: {
