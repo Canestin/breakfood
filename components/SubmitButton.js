@@ -1,4 +1,5 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import Colors from "../constants/Colors";
 
 const SubmitButton = (props) => {
   const submitButtonStyle = {

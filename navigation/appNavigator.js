@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { InitialScreen, LoginScreen, RegisterScreen } from "../screens";
+import { InitialScreen, LoginScreen } from "../screens";
 import ProductTourScreen from "../screens/ProductTourScreen";
 
 const Stack = createStackNavigator();
@@ -32,13 +32,6 @@ export default function AppNavigator() {
         <Stack.Screen
           name="Login"
           component={LoginScreen}
-          options={{
-            headerShown: false,
-          }}
-        />
-        <Stack.Screen
-          name="Register"
-          component={RegisterScreen}
           options={{
             headerShown: false,
           }}
