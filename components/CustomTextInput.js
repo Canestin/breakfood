@@ -63,7 +63,6 @@ const CustomTextInput = ({ height, width, type, name }) => {
         value={item}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        secureTextEntry={true}
       ></TextInput>
     );
   }
@@ -76,6 +75,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     color: "black",
     borderColor: "gray",
+    fontSize: 16,
   },
   inputStylePass: {
     height: "95%",
@@ -84,6 +84,7 @@ const styles = StyleSheet.create({
     color: "black",
     paddingLeft: 20,
     borderRadius: 12,
+    fontSize: 16,
   },
   inputPass: {
     backgroundColor: Colors.primaryOpacity,
