@@ -13,7 +13,6 @@ import { Entypo } from "@expo/vector-icons";
 import arcs from "../assets/icons/arcs.png";
 import { Image } from "react-native";
 import * as ImagePicker from "expo-image-picker";
-import { useNavigation } from "@react-navigation/native";
 
 const SetupScreen = ({ navigation }) => {
   const [imgProfile, setImgProfile] = useState(null);

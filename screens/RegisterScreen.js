@@ -13,7 +13,7 @@ import CustomTextInput from "../components/CustomTextInput";
 import SubmitButton from "../components/SubmitButton";
 import Colors from "../constants/Colors";
 
-const RegisterScreen = () => {
+const RegisterScreen = ({ navigation }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const handleOnChangePhoneNumber = (phoneNumber) => {
@@ -31,8 +31,8 @@ const RegisterScreen = () => {
           <Text style={styles.subtitle}>Connectez, vous</Text>
         </View>
         <View style={styles.inputContainer}>
-          <CustomTextInput name="Full Name" height="18%" width="100%" />
-          <CustomTextInput name="Email" height="18%" width="100%" />
+          <CustomTextInput placeholder="Full Name" height="18%" width="100%" />
+          <CustomTextInput placeholder="Email" height="18%" width="100%" />
           <ReactNativePhoneInput
             value={phoneNumber}
             onChangePhoneNumber={handleOnChangePhoneNumber}
@@ -52,13 +52,13 @@ const RegisterScreen = () => {
             type="password"
             width="100%"
             height="18%"
-            name={"Password"}
+            placeholder={"Password"}
           />
           <CustomTextInput
             type="password"
             width="100%"
             height="18%"
-            name={"Confirm Password"}
+            placeholder={"Confirm Password"}
           />
         </View>
 
@@ -71,6 +71,7 @@ const RegisterScreen = () => {
             height="55%"
             text="Register"
             color={Colors.primary}
+            onPress={() => navigation.navigate("Setup")}
           />
         </View>
       </View>
@@ -117,6 +118,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primaryOpacity,
     height: "18%",
     borderRadius: 12,
-    paddingLeft: 10,
+    paddingLeft: 20,
   },
 });

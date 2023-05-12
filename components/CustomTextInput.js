@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     color: "black",
     paddingLeft: 20,
     borderRadius: 12,
-    fontSize: 16,
+    fontSize: 20,
   },
   inputPass: {
     backgroundColor: Colors.primaryOpacity,

@@ -20,14 +20,16 @@ const ResetPasswordScreen = () => {
         <View style={styles.inputContainer}>
           <View style={styles.inputContainerItems}>
             <CustomTextInput
-              name="Nouveau mot de passe"
+              placeholder="Nouveau mot de passe"
               height="45%"
               width="100%"
+              type={"password"}
             />
             <CustomTextInput
-              name="Confirmer mot de passe"
+              placeholder="Confirmer mot de passe"
               height="45%"
               width="100%"
+              type={"password"}
             />
           </View>
           <Text style={styles.inputContainerText}>
