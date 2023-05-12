@@ -11,8 +11,6 @@ import {
   ResetPasswordScreen,
   ProductTourScreen,
   SetupScreen,
-  ProductTourScreen,
-  HomeScreen,
 } from "../screens";
 import TabsNavigator from "./tabsNavigator";
 
@@ -24,7 +22,8 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <StatusBar style={colorScheme === "light" ? "dark" : "light"} />
-      <Stack.Navigator initialRouteName="TabsNavigator">
+      {/* <Stack.Navigator initialRouteName="TabsNavigator"> */}
+      <Stack.Navigator initialRouteName="Initial">
         <Stack.Screen
           name="Initial"
           component={InitialScreen}
@@ -62,7 +61,7 @@ export default function AppNavigator() {
           }}
         />
 
-       <Stack.Screen
+        <Stack.Screen
           name="ForgotPassword"
           component={ForgotPasswordScreen}
           options={{
@@ -70,14 +69,14 @@ export default function AppNavigator() {
           }}
         />
 
-      <Stack.Screen
+        <Stack.Screen
           name="ResetPassword"
           component={ResetPasswordScreen}
           options={{
             headerShown: false,
           }}
         />
-     
+
         <Stack.Screen
           name="TabsNavigator"
           component={TabsNavigator}
