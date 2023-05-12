@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native";
-import GTextInput from "../components/GTextInput";
+import CustomTextInput from "../components/CustomTextInput";
 import SubmitButton from "../components/SubmitButton";
 import Colors from "../constants/Colors";
 import { AntDesign } from "@expo/vector-icons";
@@ -11,11 +10,11 @@ import { Image } from "react-native";
 
 const LoginScreen = () => {
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <View style={{ flex: 1 }}>
       <Image
         source={backlogo}
         style={{ position: "absolute", zIndex: 1, height: "35%", width: "65%" }}
-      ></Image>
+      />
       <View style={styles.loginContainer}>
         <View style={styles.loginView}>
           <Text style={styles.loginTitle}>Login</Text>
@@ -23,8 +22,8 @@ const LoginScreen = () => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.inputItems}>
-            <GTextInput name="Email" height="40%" width="100%" />
-            <GTextInput
+            <CustomTextInput name="Email" height="40%" width="100%" />
+            <CustomTextInput
               name="Password"
               type="password"
               height="40%"
@@ -53,7 +52,7 @@ const LoginScreen = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
