@@ -1,11 +1,12 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import Colors from "../constants/Colors";
 
 const SubmitButton = ({ height, width, color, text, onPress }) => {
   const submitButtonStyle = {
     ...styles.submitButton,
     height: height,
-   width: width || "100%",
-    backgroundColor: color,
+    width: width || "100%",
+    backgroundColor: color || Colors.primary,
   };
   return (
     <TouchableOpacity onPress={onPress} style={submitButtonStyle}>

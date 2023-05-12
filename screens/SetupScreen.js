@@ -15,7 +15,7 @@ import { Image } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { useNavigation } from "@react-navigation/native";
 
-const SetupScreen = () => {
+const SetupScreen = ({ navigation }) => {
   const [imgProfile, setImgProfile] = useState(null);
 
   const pickImage = async () => {
@@ -69,7 +69,7 @@ const SetupScreen = () => {
 
         <Pressable style={styles.subMitView}>
           <SubmitButton
-            sreenToNavigate="TabsNavigator"
+            onPress={() => navigation.navigate("TabsNavigator")}
             text="Connexion"
             height={60}
             width={"100%"}
