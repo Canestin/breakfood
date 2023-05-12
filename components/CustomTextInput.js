@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 
-const CustomTextInput = ({ height, width, type, placeholder }) => {
+
+  const CustomTextInput = ({ height, width, type, placeholder }) => {
   const [item, setItem] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusedPass, setIsFocusedPass] = useState(false);
@@ -29,7 +30,7 @@ const CustomTextInput = ({ height, width, type, placeholder }) => {
   const inputStyle = {
     ...styles.inputStyle,
     borderWidth: isFocused ? 1 : 0,
-    height: height,
+    height: height
     width: width || "100%",
   };
   const inputPass = {
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
     color: "black",
     paddingLeft: 20,
     borderRadius: 12,
+    fontSize: 16,
   },
   inputPass: {
     backgroundColor: Colors.primaryOpacity,

@@ -1,21 +1,14 @@
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
-import Colors from "../constants/Colors";
-import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
 
-const SubmitButton = ({ text, height, width, color, sreenToNavigate }) => {
-  const navigation = useNavigation();
-
+const SubmitButton = ({ height, width, color, text, onPress }) => {
   const submitButtonStyle = {
     ...styles.submitButton,
     height: height,
-    width: width || "100%",
-    backgroundColor: color || Colors.primary,
+   width: width || "100%",
+    backgroundColor: color,
   };
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate(sreenToNavigate)}
-      style={submitButtonStyle}
-    >
+    <TouchableOpacity onPress={onPress} style={submitButtonStyle}>
       <Text style={styles.buttonText}>{text}</Text>
     </TouchableOpacity>
   );

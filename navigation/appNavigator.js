@@ -6,6 +6,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import {
   InitialScreen,
   LoginScreen,
+  RegisterScreen,
+  ForgotPasswordScreen,
+  ResetPasswordScreen,
+  ProductTourScreen,
   SetupScreen,
   ProductTourScreen,
   HomeScreen,
@@ -43,21 +47,37 @@ export default function AppNavigator() {
           }}
         />
         <Stack.Screen
+          name="Register"
+          component={RegisterScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
           name="Setup"
           component={SetupScreen}
           options={{
             headerShown: false,
           }}
         />
-        {/* <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={
-            {
-              // headerShown: false,
-            }
-          }
-        /> */}
+
+       <Stack.Screen
+          name="ForgotPassword"
+          component={ForgotPasswordScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+
+      <Stack.Screen
+          name="ResetPassword"
+          component={ResetPasswordScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+     
         <Stack.Screen
           name="TabsNavigator"
           component={TabsNavigator}
