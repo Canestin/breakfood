@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 
-const CustomTextInput = ({ height, width, type, name }) => {
+
+  const CustomTextInput = ({ height, width, type, placeholder }) => {
   const [item, setItem] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusedPass, setIsFocusedPass] = useState(false);
@@ -23,26 +24,26 @@ const CustomTextInput = ({ height, width, type, name }) => {
     setIsFocusedPass(false);
   };
   const handlePressEye = () => {
-    protectPassword ? setprotectPassword(false) : setprotectPassword(true);
+    setprotectPassword(!protectPassword);
     protectPassword ? setEye("eye-off") : setEye("eye");
   };
   const inputStyle = {
     ...styles.inputStyle,
     borderWidth: isFocused ? 1 : 0,
-    height: height,
-    width: width,
+    height: height
+    width: width || "100%",
   };
   const inputPass = {
     ...styles.inputPass,
     borderWidth: isFocusedPass ? 1 : 0,
     height: height,
   };
-  if (type == "password") {
+  if (type === "password") {
     return (
       <View style={inputPass}>
         <TextInput
           style={styles.inputStylePass}
-          placeholder={name}
+          placeholder={placeholder}
           onChangeText={setItem}
           value={item}
           onFocus={handleFocusPass}
@@ -58,12 +59,12 @@ const CustomTextInput = ({ height, width, type, name }) => {
     return (
       <TextInput
         style={inputStyle}
-        placeholder={name}
+        placeholder={placeholder}
         onChangeText={setItem}
         value={item}
         onFocus={handleFocus}
         onBlur={handleBlur}
-      ></TextInput>
+      />
     );
   }
 };
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     color: "black",
     borderColor: "gray",
-    fontSize: 16,
+    fontSize: 20,
   },
   inputStylePass: {
     height: "95%",

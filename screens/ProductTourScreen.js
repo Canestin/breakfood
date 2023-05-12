@@ -7,6 +7,7 @@ import {
   Dimensions,
   Pressable,
   Image,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 import { StatusBar } from "expo-status-bar";
@@ -112,7 +113,10 @@ const ProductTourScreen = () => {
             </ImageBackground>
 
             <View style={styles.actionContainer}>
-              <View style={styles.action1}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Setup")}
+                style={styles.action1}
+              >
                 <Text
                   style={{
                     color: Colors.white,
@@ -122,7 +126,7 @@ const ProductTourScreen = () => {
                 >
                   S'inscrire avec l'email
                 </Text>
-              </View>
+              </TouchableOpacity>
               <View style={styles.action2}>
                 <View style={styles.action2Item}>
                   <Image

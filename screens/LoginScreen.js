@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
-import { SafeAreaView } from "react-native";
 import CustomTextInput from "../components/CustomTextInput";
 import SubmitButton from "../components/SubmitButton";
 import Colors from "../constants/Colors";
@@ -15,7 +14,7 @@ const LoginScreen = ({ navigation }) => {
       <Image
         source={arcIcon}
         style={{ position: "absolute", zIndex: 1, height: "35%", width: "65%" }}
-      ></Image>
+      />
       <View style={styles.loginContainer}>
         <View style={styles.loginView}>
           <Text style={styles.loginTitle}>Login</Text>

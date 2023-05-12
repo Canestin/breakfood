@@ -9,6 +9,7 @@ export default {
   tabIconDefault: "#ccc",
   tabIconSelected: tintColorDark,
   white: "#fff",
+  black: "#000",
   primary: tintColor,
   primaryOpacity: tintColorOpacity,
 };

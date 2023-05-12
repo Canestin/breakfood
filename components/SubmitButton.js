@@ -1,12 +1,10 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
 const SubmitButton = ({ height, width, color, text, onPress }) => {
-  const navigation = useNavigation();
   const submitButtonStyle = {
     ...styles.submitButton,
     height: height,
-    width: width,
+   width: width || "100%",
     backgroundColor: color,
   };
   return (
