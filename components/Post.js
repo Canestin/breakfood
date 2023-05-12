@@ -28,7 +28,7 @@ const Post = ({ nutrionist, post_id }) => {
         </View>
         <FontAwesome name="bookmark-o" size={24} color="black" />
       </View>
-      <ImageBackground source={postImgs[post_id]} style={styles.recipe}>
+      <ImageBackground source={postImgs[post_id % 4]} style={styles.recipe}>
         <LinearGradient
           colors={["transparent", "rgba(0,0,0,0.9)"]}
           start={{ x: 0.6, y: 0 }}
