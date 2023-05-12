@@ -3,8 +3,14 @@ import { StatusBar } from "expo-status-bar";
 import { useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { InitialScreen, LoginScreen } from "../screens";
-import ProductTourScreen from "../screens/ProductTourScreen";
+import {
+  InitialScreen,
+  LoginScreen,
+  SetupScreen,
+  ProductTourScreen,
+  HomeScreen,
+} from "../screens";
+import TabsNavigator from "./tabsNavigator";
 
 const Stack = createStackNavigator();
 
@@ -14,7 +20,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <StatusBar style={colorScheme === "light" ? "dark" : "light"} />
-      <Stack.Navigator initialRouteName="Initial">
+      <Stack.Navigator initialRouteName="TabsNavigator">
         <Stack.Screen
           name="Initial"
           component={InitialScreen}
@@ -32,6 +38,29 @@ export default function AppNavigator() {
         <Stack.Screen
           name="Login"
           component={LoginScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="Setup"
+          component={SetupScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        {/* <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={
+            {
+              // headerShown: false,
+            }
+          }
+        /> */}
+        <Stack.Screen
+          name="TabsNavigator"
+          component={TabsNavigator}
           options={{
             headerShown: false,
           }}
