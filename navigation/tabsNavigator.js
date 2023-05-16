@@ -10,8 +10,6 @@ import HeaderLeftProfile from "../components/HeaderLeftProfile";
 import { HomeScreen, ProfileScreen, SearchScreen } from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
-
-import Username from "../components/Username";
 import HomeStackNavigator from "./homeStackNavigator";
 import ProfileNavigator from "./profileStackNavigator";
 
