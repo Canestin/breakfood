@@ -7,20 +7,13 @@ import {
   MaterialIcons,
 } from "@expo/vector-icons";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
-import {
-  HomeScreen,
-  LoginScreen,
-  ProfileScreen,
-  SearchScreen,
-} from "../screens";
+import { HomeScreen, ProfileScreen, SearchScreen } from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
-<<<<<<< Updated upstream
+
 import Username from "../components/Username";
-=======
 import HomeStackNavigator from "./homeStackNavigator";
 import ProfileNavigator from "./profileStackNavigator";
->>>>>>> Stashed changes
 
 const Tab = createBottomTabNavigator();
 
@@ -30,24 +23,20 @@ function TabsNavigator() {
       initialRouteName="Home"
       sceneContainerStyle={{ backgroundColor: Colors.white }}
       screenOptions={({ navigation, route }) => ({
-        // headerTitle: "TATAMI",
         headerTitleStyle: { fontWeight: "bold", color: Colors.black },
-        // headerStyle: { backgroundColor: Colors.white },
-
-        // headerRight: () => <HeaderRightUsersOnline />,
         headerTitleAlign: "center",
-        // tabBarActiveTintColor: Colors.white,
         tabBarStyle: { backgroundColor: Colors.white },
         tabBarLabelStyle: { fontSize: 11 },
         tabBarShowLabel: false,
       })}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeStackNavigator"
+        component={HomeStackNavigator}
         options={{
           title: "Accueil",
           headerTitle: "Accueil",
+          headerShown: false,
           headerLeft: () => <HeaderLeftProfile />,
           tabBarIcon: ({ focused, color, size }) => (
             <MaterialCommunityIcons

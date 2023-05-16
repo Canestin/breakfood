@@ -8,13 +8,10 @@ import SetupScreen from "./SetupScreen";
 import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
 import ProfileScreen from "./ProfileScreen";
-<<<<<<< Updated upstream
-
-=======
 import UserScreen from "./UserScreen";
 import PostDetailScreen from "./PostDetailScreen";
 import FollowerScreen from "./FollowerScreen";
->>>>>>> Stashed changes
+
 export {
   InitialScreen,
   LoginScreen,
@@ -26,10 +23,7 @@ export {
   HomeScreen,
   SearchScreen,
   ProfileScreen,
-<<<<<<< Updated upstream
-=======
   UserScreen,
   PostDetailScreen,
   FollowerScreen,
->>>>>>> Stashed changes
 };
