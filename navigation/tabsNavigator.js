@@ -11,13 +11,14 @@ import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
 import HomeStackNavigator from "./homeStackNavigator";
 import ProfileNavigator from "./profileStackNavigator";
+import AddPostStackNav from "./addPostStackNav";
 
 const Tab = createBottomTabNavigator();
 
 function TabsNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeStackNavigator"
       sceneContainerStyle={{ backgroundColor: Colors.white }}
       screenOptions={({ navigation, route }) => ({
         headerTitleStyle: { fontWeight: "bold", color: Colors.black },
@@ -60,11 +61,10 @@ function TabsNavigator() {
         }}
       />
       <Tab.Screen
-        name="Account"
-        component={HomeScreen}
+        name="AddPostStackNav"
+        component={AddPostStackNav}
         options={{
-          title: "Portefeuille",
-          headerTitle: "Portefeuille",
+          headerShown: false,
           tabBarIcon: ({ focused, color, size }) => (
             <AntDesign
               name={focused ? "pluscircle" : "pluscircleo"}
@@ -103,7 +103,6 @@ function TabsNavigator() {
         options={{
           headerTitle: "",
           headerShown: false,
-
           tabBarIcon: ({ focused, color, size }) => (
             <FontAwesome
               name={focused ? "user" : "user-o"}
