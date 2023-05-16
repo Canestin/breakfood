@@ -1,14 +1,15 @@
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import React from "react";
 import Colors from "../constants/Colors";
-import { StatusBar } from "expo-status-bar";
 import soup from "../assets/images/soup.png";
 import fruitmer from "../assets/images/fruitmer.png";
 import gateau from "../assets/images/gateau.png";
 import sushi from "../assets/images/sushi.png";
-import NUTRITIONISTDATA from "../data/NutritionistData";
+import NUTRITIONISTDATA from "../data/FakeNutritionistData";
+import { multiplePostData } from "../data/FakePostData";
 import { useScrollToTop } from "@react-navigation/native";
 import Post from "../components/Post";
+import Category from "../components/Category";
 
 const HomeScreen = ({ navigation }) => {
   const ref = React.useRef(null);
@@ -17,7 +18,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar style="dark" />
       <ScrollView
         showsVerticalScrollIndicator={false}
         ref={ref}
@@ -41,23 +41,10 @@ const HomeScreen = ({ navigation }) => {
 
         <View style={{ height: 40, paddingHorizontal: 10 }}>
           <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-            <View style={styles.category}>
-              <Image source={soup} style={styles.imgCategory} />
-              <Text style={styles.textCategory}>soup</Text>
-            </View>
-            <View style={styles.category}>
-              <Image source={fruitmer} style={styles.imgCategory} />
-              <Text style={styles.textCategory}>fruit de mer</Text>
-            </View>
-            <View style={styles.category}>
-              <Image source={sushi} style={styles.imgCategory} />
-
-              <Text style={styles.textCategory}>sushi</Text>
-            </View>
-            <View style={styles.category}>
-              <Image source={gateau} style={styles.imgCategory} />
-              <Text style={styles.textCategory}>gateau</Text>
-            </View>
+            <Category image={soup} text="soup" />
+            <Category image={fruitmer} text="fruit de mer" />
+            <Category image={sushi} text="sushi" />
+            <Category image={gateau} text="gateau" />
           </ScrollView>
         </View>
 
@@ -132,8 +119,8 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         <View style={styles.recipesContainer}>
-          {NUTRITIONISTDATA.concat(NUTRITIONISTDATA).map((nutrionist, i) => (
-            <Post key={i} post_id={i} nutrionist={nutrionist} />
+          {multiplePostData.map((post, i) => (
+            <Post key={i} post={post} />
           ))}
         </View>
       </ScrollView>
@@ -146,25 +133,7 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // padding: 20,
     paddingBottom: 0,
-  },
-  category: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 10,
-    backgroundColor: Colors.primaryOpacity,
-    marginHorizontal: 10,
-    borderRadius: 12,
-    paddingHorizontal: 10,
-  },
-  imgCategory: {
-    width: 30,
-    height: 30,
-  },
-  textCategory: {
-    fontWeight: "600",
   },
   nutrionistsContainer: {
     flex: 1,

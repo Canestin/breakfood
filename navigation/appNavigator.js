@@ -21,9 +21,9 @@ export default function AppNavigator() {
 
   return (
     <NavigationContainer>
-      <StatusBar style={colorScheme === "light" ? "dark" : "light"} />
-      {/* <Stack.Navigator initialRouteName="TabsNavigator"> */}
-      <Stack.Navigator initialRouteName="Initial">
+      <StatusBar style="dark" />
+      <Stack.Navigator initialRouteName="TabsNavigator">
+        {/* <Stack.Navigator initialRouteName="Initial"> */}
         <Stack.Screen
           name="Initial"
           component={InitialScreen}

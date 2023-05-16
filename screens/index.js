@@ -8,6 +8,8 @@ import SetupScreen from "./SetupScreen";
 import HomeScreen from "./HomeScreen";
 import SearchScreen from "./SearchScreen";
 import ProfileScreen from "./ProfileScreen";
+import UserScreen from "./UserScreen";
+import PostDetailScreen from "./PostDetailScreen";
 
 export {
   InitialScreen,
@@ -20,4 +22,6 @@ export {
   HomeScreen,
   SearchScreen,
   ProfileScreen,
+  UserScreen,
+  PostDetailScreen,
 };

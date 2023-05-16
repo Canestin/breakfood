@@ -1,82 +1,114 @@
-import { View, Text, StyleSheet, Image, ImageBackground } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  Pressable,
+} from "react-native";
 import React from "react";
-import recipe1 from "../assets/images/recipe1.png";
-import recipe2 from "../assets/images/recipe2.png";
-import recipe3 from "../assets/images/recipe3.png";
-import recipe4 from "../assets/images/recipe4.png";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 // In reality, I will only retrieve the Post Id and process everything here
 
-const Post = ({ nutrionist, post_id }) => {
-  const postImgs = [recipe1, recipe2, recipe3, recipe4];
+const Post = ({ post }) => {
+  if (!post) return <View style={styles.skeletonPost} />;
+  const navigation = useNavigation();
+
   return (
     <View style={styles.post}>
       <View style={styles.postHeader}>
-        <View style={styles.postHeaderUser}>
-          <Image source={nutrionist.image} style={styles.postUserPhoto} />
+        <Pressable
+          onPress={() =>
+            navigation.navigate({
+              name: "User",
+              params: { userId: post.user.id },
+              merge: true,
+            })
+          }
+          style={styles.postHeaderUser}
+        >
+          <Image source={post.user.image} style={styles.postUserPhoto} />
           <Text style={{ fontSize: 14, fontWeight: "700" }}>
-            {nutrionist.firstname}
+            {post.user.username}
           </Text>
-          <MaterialCommunityIcons
-            name="check-decagram"
-            size={12}
-            color="#579AF5"
-            style={{ marginLeft: -2 }}
-          />
-        </View>
+          {post.user.certified && (
+            <MaterialCommunityIcons
+              name="check-decagram"
+              size={12}
+              color="#579AF5"
+              style={{ marginLeft: -2 }}
+            />
+          )}
+        </Pressable>
         <FontAwesome name="bookmark-o" size={24} color="black" />
       </View>
-      <ImageBackground source={postImgs[post_id % 4]} style={styles.recipe}>
-        <LinearGradient
-          colors={["transparent", "rgba(0,0,0,0.9)"]}
-          start={{ x: 0.6, y: 0 }}
-          style={{
-            flex: 1,
-            justifyContent: "flex-end",
-            paddingBottom: "20%",
-            paddingHorizontal: 30,
-          }}
+      <ImageBackground source={post.image} style={styles.recipe}>
+        <Pressable
+          style={{ flex: 1 }}
+          onPress={() =>
+            navigation.navigate({
+              name: "PostDetails",
+              params: { postId: post.id },
+              merge: true,
+            })
+          }
         >
-          <View
-            style={
-              {
-                /* backgroundColor: "red", */
-              }
-            }
+          <LinearGradient
+            colors={["transparent", "rgba(0,0,0,0.9)"]}
+            start={{ x: 0.6, y: 0 }}
+            style={{
+              flex: 1,
+              justifyContent: "flex-end",
+              paddingBottom: "20%",
+              paddingHorizontal: 30,
+            }}
           >
             <View
-              style={{
-                flexDirection: "row",
-                gap: 30,
-                marginBottom: 10,
-              }}
+              style={
+                {
+                  // backgroundColor: "red",
+                }
+              }
             >
-              <Text style={{ fontSize: 14, color: "white" }}>15 min</Text>
-              <Text style={{ fontSize: 14, color: "white" }}>
-                12 Ingrédients
+              <View
+                style={{
+                  flexDirection: "row",
+                  gap: 30,
+                  marginBottom: 10,
+                }}
+              >
+                <Text style={{ fontSize: 14, color: "white" }}>
+                  {post.time} min
+                </Text>
+                <Text style={{ fontSize: 14, color: "white" }}>
+                  {post.ingredients} Ingrédients
+                </Text>
+              </View>
+              <Text
+                style={{
+                  fontSize: 26,
+                  fontWeight: "700",
+                  color: "white",
+                }}
+              >
+                {post.title}
               </Text>
             </View>
-            <Text
-              style={{
-                fontSize: 26,
-                fontWeight: "700",
-                color: "white",
-              }}
-            >
-              Toast fruité aux bleuets
-            </Text>
-          </View>
-        </LinearGradient>
+          </LinearGradient>
+        </Pressable>
       </ImageBackground>
       <View style={styles.postFooter}>
         <View style={styles.postFooterItem}>
           <FontAwesome name="heart-o" size={24} color="black" />
-          <Text style={styles.postFooterItemText}>1207 J'aime</Text>
+          <Text style={styles.postFooterItemText}>{post.likes} J'aime</Text>
         </View>
         <View style={styles.postFooterItem}>
-          <Text style={styles.postFooterItemText}>103 commentaires</Text>
+          <Text style={styles.postFooterItemText}>
+            {post.comments} commentaires
+          </Text>
           {/* <FontAwesome name="bookmark-o" size={24} color="black" /> */}
         </View>
       </View>
@@ -91,7 +123,12 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
-
+  skeletonPost: {
+    height: 400,
+    width: "100%",
+    backgroundColor: "lightgrey",
+    marginBottom: 10,
+  },
   recipe: {
     height: 350,
   },
