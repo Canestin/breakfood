@@ -8,7 +8,6 @@ import { Image } from "react-native";
 import Colors from "../constants/Colors";
 import NumberText from "../components/NumberText";
 import { MaterialIcons } from "@expo/vector-icons";
-import FollowerItem from "../components/FollowerItem";
 const ProfileScreen = () => {
   const navigation = useNavigation();
 
