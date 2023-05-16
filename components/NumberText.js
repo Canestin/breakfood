@@ -1,14 +1,14 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Pressable, Text } from "react-native";
 
-const NumberText = ({ number, text }) => {
+const NumberText = ({ number, text, onPress }) => {
   return (
-    <View style={{ flex: 1 / 3 }}>
+    <Pressable onPress={onPress} style={{ flex: 1 / 3 }}>
       <Text style={{ fontSize: 18, fontWeight: "bold", textAlign: "center" }}>
         {number}
       </Text>
       <Text style={{ fontSize: 11, textAlign: "center" }}>{text}</Text>
-    </View>
+    </Pressable>
   );
 };
 

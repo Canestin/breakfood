@@ -48,7 +48,6 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#ebf0f5",
   },
   profileContainer: {
     width: "100%",
