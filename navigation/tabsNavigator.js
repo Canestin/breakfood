@@ -7,7 +7,12 @@ import {
   MaterialIcons,
 } from "@expo/vector-icons";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
-import { HomeScreen, ProfileScreen, SearchScreen } from "../screens";
+import {
+  HomeScreen,
+  ProfileScreen,
+  SearchScreen,
+  NotificationsScreen,
+} from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
 import HomeStackNavigator from "./homeStackNavigator";
@@ -80,10 +85,8 @@ function TabsNavigator() {
 
       <Tab.Screen
         name="Notifications"
-        component={HomeScreen}
+        component={NotificationsScreen}
         options={{
-          title: "Notifications",
-          headerTitle: "Notifications",
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? "notifications-sharp" : "notifications-outline"}

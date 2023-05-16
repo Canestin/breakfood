@@ -10,6 +10,7 @@ import SearchScreen from "./SearchScreen";
 import ProfileScreen from "./ProfileScreen";
 import UserScreen from "./UserScreen";
 import PostDetailScreen from "./PostDetailScreen";
+import NotificationsScreen from "./NotificationsScreen";
 
 export {
   InitialScreen,
@@ -24,4 +25,5 @@ export {
   ProfileScreen,
   UserScreen,
   PostDetailScreen,
+  NotificationsScreen,
 };
