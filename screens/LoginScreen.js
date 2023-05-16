@@ -22,9 +22,9 @@ const LoginScreen = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.inputItems}>
-            <CustomTextInput name="Email" height="40%" width="100%" />
+            <CustomTextInput placeholder="Email" height="40%" width="100%" />
             <CustomTextInput
-              name="Password"
+              placeholder="Password"
               type="password"
               height="40%"
               width="100%"

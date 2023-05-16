@@ -18,7 +18,7 @@ const ForgotPasswordScreen = ({ navigation }) => {
           <Text style={styles.subtitle}>Type your account email </Text>
         </View>
         <View style={styles.inputContainer}>
-          <CustomTextInput name="Email" height="45%" width="100%" />
+          <CustomTextInput placeholder="Email" height="45%" width="100%" />
           <Text style={{ paddingTop: 10 }}>
             If an account match with your email you will receive a link
           </Text>

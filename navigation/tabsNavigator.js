@@ -4,12 +4,14 @@ import {
   FontAwesome,
   MaterialCommunityIcons,
   AntDesign,
+  MaterialIcons,
 } from "@expo/vector-icons";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
 import { HomeScreen, ProfileScreen, SearchScreen } from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
 import HomeStackNavigator from "./homeStackNavigator";
+import Username from "../components/Username";
 
 const Tab = createBottomTabNavigator();
 
@@ -89,7 +91,6 @@ function TabsNavigator() {
               color={Colors.black}
             />
           ),
-          headerRight: () => <></>,
           tabBarBadge: true,
           tabBarBadgeStyle: {
             backgroundColor: "red",
@@ -103,8 +104,10 @@ function TabsNavigator() {
         name="Profile"
         component={ProfileScreen}
         options={{
-          title: "Notifications",
-          headerTitle: "username",
+          headerTitle: "",
+          headerLeft: () => (
+            <Username isVerified={true} userName={"Pierre Sedo"} />
+          ),
           tabBarIcon: ({ focused, color, size }) => (
             <FontAwesome
               name={focused ? "user" : "user-o"}
@@ -112,7 +115,6 @@ function TabsNavigator() {
               color={Colors.black}
             />
           ),
-          headerRight: () => <></>,
         }}
       />
     </Tab.Navigator>

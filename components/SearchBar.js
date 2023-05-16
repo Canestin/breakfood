@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import React, { useRef, useState } from "react";
 import { FontAwesome } from "@expo/vector-icons";
+import { View, Text, StyleSheet, Dimensions } from "react-native";
+import React from "react";
 
 const width = Dimensions.get("window").width;
 // In reality, I will only retrieve the Post Id and process everything here
