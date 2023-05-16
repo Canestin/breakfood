@@ -14,7 +14,6 @@ import { StatusBar } from "expo-status-bar";
 import { DATA } from "../data/ProductTourData";
 import { LinearGradient } from "expo-linear-gradient";
 import Colors from "../constants/Colors";
-// import ActionButton from "../components/ActionButton";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 
