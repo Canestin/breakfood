@@ -1,14 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import profilePic from "../assets/images/nutritionist1.png";
 import userPic from "../assets/images/userpic1.jpeg";
 import banner from "../assets/images/banner.png";
 import { Image } from "react-native";
 import Colors from "../constants/Colors";
 import NumberText from "../components/NumberText";
-import { MaterialIcons } from "@expo/vector-icons";
-import FollowerItem from "../components/FollowerItem";
 const ProfileScreen = () => {
   const navigation = useNavigation();
 
@@ -29,7 +26,11 @@ const ProfileScreen = () => {
           </View>
           <View style={styles.profileInfoData}>
             <NumberText number="450" text="Publications" />
-            <NumberText number="1,45M" text="Abonnés" />
+            <NumberText
+              onPress={() => navigation.navigate("Followers")}
+              number="1,45M"
+              text="Abonnés"
+            />
             <NumberText number="1500" text="Abonnements" />
           </View>
         </View>

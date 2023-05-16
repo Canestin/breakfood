@@ -15,7 +15,12 @@ import {
 } from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
+<<<<<<< Updated upstream
 import Username from "../components/Username";
+=======
+import HomeStackNavigator from "./homeStackNavigator";
+import ProfileNavigator from "./profileStackNavigator";
+>>>>>>> Stashed changes
 
 const Tab = createBottomTabNavigator();
 
@@ -109,13 +114,12 @@ function TabsNavigator() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="ProfileNavigator"
+        component={ProfileNavigator}
         options={{
           headerTitle: "",
-          headerLeft: () => (
-            <Username isVerified={true} userName={"Pierre Sedo"} />
-          ),
+          headerShown: false,
+
           tabBarIcon: ({ focused, color, size }) => (
             <FontAwesome
               name={focused ? "user" : "user-o"}
