@@ -11,7 +11,7 @@ import ProfileScreen from "./ProfileScreen";
 import UserScreen from "./UserScreen";
 import PostDetailScreen from "./PostDetailScreen";
 import FollowerScreen from "./FollowerScreen";
-
+>>>>>>> Stashed changes
 export {
   InitialScreen,
   LoginScreen,
@@ -26,4 +26,6 @@ export {
   UserScreen,
   PostDetailScreen,
   FollowerScreen,
+>>>>>>> Stashed changes
+>>>>>>>>> Temporary merge branch 2
 };

@@ -4,10 +4,9 @@ import {
   FontAwesome,
   MaterialCommunityIcons,
   AntDesign,
-  MaterialIcons,
 } from "@expo/vector-icons";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
-import { HomeScreen, ProfileScreen, SearchScreen } from "../screens";
+import { HomeScreen, SearchScreen, NotificationsScreen } from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
 import HomeStackNavigator from "./homeStackNavigator";
@@ -18,7 +17,7 @@ const Tab = createBottomTabNavigator();
 function TabsNavigator() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="HomeStackNavigator"
       sceneContainerStyle={{ backgroundColor: Colors.white }}
       screenOptions={({ navigation, route }) => ({
         headerTitleStyle: { fontWeight: "bold", color: Colors.black },
@@ -61,11 +60,10 @@ function TabsNavigator() {
         }}
       />
       <Tab.Screen
-        name="Account"
-        component={HomeScreen}
+        name="AddPostStackNav"
+        component={AddPostStackNav}
         options={{
-          title: "Portefeuille",
-          headerTitle: "Portefeuille",
+          headerShown: false,
           tabBarIcon: ({ focused, color, size }) => (
             <AntDesign
               name={focused ? "pluscircle" : "pluscircleo"}
@@ -80,10 +78,8 @@ function TabsNavigator() {
 
       <Tab.Screen
         name="Notifications"
-        component={HomeScreen}
+        component={NotificationsScreen}
         options={{
-          title: "Notifications",
-          headerTitle: "Notifications",
           tabBarIcon: ({ focused, color, size }) => (
             <Ionicons
               name={focused ? "notifications-sharp" : "notifications-outline"}
@@ -106,7 +102,6 @@ function TabsNavigator() {
         options={{
           headerTitle: "",
           headerShown: false,
-
           tabBarIcon: ({ focused, color, size }) => (
             <FontAwesome
               name={focused ? "user" : "user-o"}
