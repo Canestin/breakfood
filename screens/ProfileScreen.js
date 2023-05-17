@@ -31,7 +31,11 @@ const ProfileScreen = () => {
               number="1,45M"
               text="Abonnés"
             />
-            <NumberText number="1500" text="Abonnements" />
+            <NumberText
+              onPress={() => navigation.navigate("Following")}
+              number="1500"
+              text="Abonnements"
+            />
           </View>
         </View>
         <View style={styles.profilePicture}>

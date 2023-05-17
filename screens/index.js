@@ -13,6 +13,9 @@ import PostDetailScreen from "./PostDetailScreen";
 import FollowerScreen from "./FollowerScreen";
 import NotificationsScreen from "./NotificationsScreen";
 import AddPostScreen1 from "./AddPostScreen1";
+import FollowingScreen from "./FollowingScreen";
+import NotificationsScreen from "./NotificationsScreen";
+import AddPostScreen1 from "./AddPostScreen1";
 
 export {
   InitialScreen,
@@ -28,6 +31,7 @@ export {
   UserScreen,
   PostDetailScreen,
   FollowerScreen,
+  FollowingScreen,
   NotificationsScreen,
   AddPostScreen1,
 };

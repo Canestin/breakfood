@@ -6,7 +6,7 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
-import { HomeScreen, SearchScreen, NotificationsScreen } from "../screens";
+import { SearchScreen, NotificationsScreen } from "../screens";
 import Colors from "../constants/Colors";
 import SearchBar from "../components/SearchBar";
 import HomeStackNavigator from "./homeStackNavigator";
