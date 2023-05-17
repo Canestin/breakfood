@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import profilePic from "../assets/images/nutritionist1.png";
@@ -7,39 +7,21 @@ import banner from "../assets/images/banner.png";
 import { Image } from "react-native";
 import Colors from "../constants/Colors";
 import NumberText from "../components/NumberText";
+import FollowerItem from "../components/FollowerItem";
 import { MaterialIcons } from "@expo/vector-icons";
 const ProfileScreen = () => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container}>
-      <View style={styles.profileContainer}>
-        <View style={styles.profileBanner}>
-          <Image source={banner} style={{ width: "100%", height: "100%" }} />
-        </View>
-        <View style={styles.profileInfo}>
-          <View style={styles.profileInfoText}>
-            <Text style={{ fontSize: 20, color: Colors.primary }}>
-              Pierro236{" "}
-            </Text>
-            <Text style={{ fontSize: 15, color: Colors.black }}>
-              Paris, France
-            </Text>
-          </View>
-          <View style={styles.profileInfoData}>
-            <NumberText number="450" text="Publications" />
-            <NumberText number="1,45M" text="Abonnés" />
-            <NumberText number="1500" text="Abonnements" />
-          </View>
-        </View>
-        <View style={styles.profilePicture}>
-          <Image
-            style={{ width: "100%", height: "100%", borderRadius: 120 / 2 }}
-            source={userPic}
-          />
-        </View>
-      </View>
-    </View>
+    <ScrollView style={styles.container}>
+      {[...Array(20)].map((_, index) => (
+        <FollowerItem
+          key={index.toString()}
+          userName="Pierro236"
+          userLocation="Paris, France"
+        />
+      ))}
+    </ScrollView>
   );
 };
 
@@ -48,6 +30,7 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 15,
   },
   profileContainer: {
     width: "100%",
