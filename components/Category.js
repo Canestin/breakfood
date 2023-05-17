@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import Colors from "../constants/Colors";
 
-const Category = ({ image, text, ratio, color, onPress }) => {
+const Category = ({ image, text, ratio, color, onPress, icon }) => {
   const imgSize = !!ratio ? ratio * 30 : 30;
   return (
     <TouchableOpacity
@@ -15,13 +15,17 @@ const Category = ({ image, text, ratio, color, onPress }) => {
       ]}
       onPress={onPress}
     >
-      <Image
-        source={image}
-        style={{
-          width: imgSize,
-          height: imgSize,
-        }}
-      />
+      {image ? (
+        <Image
+          source={image}
+          style={{
+            width: imgSize,
+            height: imgSize,
+          }}
+        />
+      ) : (
+        icon
+      )}
       <Text style={{ fontSize: !!ratio ? ratio * 12 : 12, fontWeight: "600" }}>
         {text}
       </Text>

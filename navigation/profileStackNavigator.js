@@ -1,5 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { ProfileScreen, FollowerScreen } from "../screens";
+import { ProfileScreen, FollowerScreen, FollowingScreen } from "../screens";
 import Username from "../components/Username";
 import Colors from "../constants/Colors";
 
@@ -26,6 +26,16 @@ export default function ProfileNavigator() {
       <Stack.Screen
         name="Followers"
         component={FollowerScreen}
+        options={{
+          headerLeft: () => (
+            <Username isVerified={true} userName={"Pierre Sedo"} />
+          ),
+          headerTitle: "",
+        }}
+      />
+      <Stack.Screen
+        name="Following"
+        component={FollowingScreen}
         options={{
           headerLeft: () => (
             <Username isVerified={true} userName={"Pierre Sedo"} />

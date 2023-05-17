@@ -1,9 +1,20 @@
-import React from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, StyleSheet, Pressable } from "react-native";
 import userPic from "../assets/images/userpic1.jpeg";
 import { SimpleLineIcons } from "@expo/vector-icons";
+import Colors from "../constants/Colors";
 
 const FollowerItem = ({ onPress, userName, userLocation, userPP }) => {
+  const [isFollowing, setFollowing] = useState(true);
+  const icon = isFollowing ? "user-following" : "user-follow";
+  const color = isFollowing ? Colors.primary : Colors.black;
+  const followStatus = {
+    ...styles.followStatus,
+    backgroundColor: color,
+  };
+  handlePressFollowing = () => {
+    setFollowing(!isFollowing);
+  };
   return (
     <View style={styles.container} onPress={onPress}>
       <View style={styles.userContainer}>
@@ -24,11 +35,11 @@ const FollowerItem = ({ onPress, userName, userLocation, userPP }) => {
           </Text>
         </View>
       </View>
-      <View style={styles.followStatus}>
+      <Pressable onPress={handlePressFollowing} style={followStatus}>
         <Text>
-          <SimpleLineIcons name="user-following" size={24} color="black" />
+          <SimpleLineIcons name={icon} size={24} color={"white"} />
         </Text>
-      </View>
+      </Pressable>
     </View>
   );
 };
@@ -63,10 +74,10 @@ const styles = StyleSheet.create({
     display: "flex",
   },
   followStatus: {
-    width: "40%",
-    height: "100%",
+    width: "15%",
+    height: "60%",
     justifyContent: "center",
-    alignItems: "flex-end",
-    paddingRight: 5,
+    alignItems: "center",
+    borderRadius: 15,
   },
 });

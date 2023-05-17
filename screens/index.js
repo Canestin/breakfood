@@ -11,7 +11,9 @@ import ProfileScreen from "./ProfileScreen";
 import UserScreen from "./UserScreen";
 import PostDetailScreen from "./PostDetailScreen";
 import FollowerScreen from "./FollowerScreen";
->>>>>>> Stashed changes
+import FollowingScreen from "./FollowingScreen";
+import NotificationsScreen from "./NotificationsScreen";
+import AddPostScreen1 from "./AddPostScreen1";
 export {
   InitialScreen,
   LoginScreen,
@@ -26,6 +28,7 @@ export {
   UserScreen,
   PostDetailScreen,
   FollowerScreen,
->>>>>>> Stashed changes
->>>>>>>>> Temporary merge branch 2
+  FollowingScreen,
+  NotificationsScreen,
+  AddPostScreen1,
 };
