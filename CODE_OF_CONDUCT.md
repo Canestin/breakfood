@@ -20,7 +20,7 @@ c. Tenez-vous au courant des mises à jour du projet et de l'avancement des autr
 
 a. Partagez vos connaissances et compétences avec les autres membres de l'équipe pour améliorer le projet.
 
-b. Acceptez les commentaires constructifs et les suggestions d'amélioration.
+b. Soyez ouverts aux commentaires constructifs et aux suggestions d'amélioration.
 
 c. Encouragez la collaboration et la communication entre les membres de l'équipe.
 
