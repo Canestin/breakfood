@@ -28,11 +28,11 @@ const RegisterScreen = ({ navigation }) => {
       <View style={styles.container}>
         <View style={styles.title}>
           <Text style={styles.titleText}>Register</Text>
-          <Text style={styles.subtitle}>Connectez, vous</Text>
+          <Text style={styles.subtitle}>Inscrivez vous</Text>
         </View>
         <View style={styles.inputContainer}>
-          <CustomTextInput placeholder="Full Name" height="18%" width="100%" />
-          <CustomTextInput placeholder="Email" height="18%" width="100%" />
+          <CustomTextInput placeholder="Full Name" height="17%" width="100%" />
+          <CustomTextInput placeholder="Email" height="17%" width="100%" />
           <ReactNativePhoneInput
             value={phoneNumber}
             onChangePhoneNumber={handleOnChangePhoneNumber}
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     padding: 25,
   },
   title: {
-    flex: 0.3,
+    flex: 0.25,
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",

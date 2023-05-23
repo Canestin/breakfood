@@ -22,11 +22,11 @@ const LoginScreen = ({ navigation }) => {
         </View>
         <View style={styles.inputContainer}>
           <View style={styles.inputItems}>
-            <CustomTextInput placeholder="Email" height="40%" width="100%" />
+            <CustomTextInput placeholder="Email" height={60} width="100%" />
             <CustomTextInput
               placeholder="Password"
               type="password"
-              height="40%"
+              height={60}
               width="100%"
             />
           </View>
@@ -67,8 +67,12 @@ const LoginScreen = ({ navigation }) => {
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+  loginContainer: {
+    padding: 25,
+    flex: 1,
+  },
   loginView: {
-    flex: 0.3,
+    flex: 0.25,
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-end",
@@ -78,10 +82,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 35,
   },
-  loginContainer: {
-    padding: 25,
-    flex: 1,
-  },
+
   subtitle: {
     fontSize: 15,
   },

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Colors from "../constants/Colors";
@@ -12,7 +12,6 @@ const AddPostScreen1 = () => {
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      // mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [1, 1],
       quality: 1,
@@ -83,5 +82,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.primaryOpacity,
     borderRadius: 20,
     gap: 20,
+  },
+  imgProfile: {
+    height: "100%",
+    width: "100%",
+    resizeMode: "cover",
+    borderRadius: 20,
   },
 });

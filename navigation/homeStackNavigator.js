@@ -18,6 +18,7 @@ export default function HomeStackNavigator() {
         name="Home"
         component={HomeScreen}
         options={{
+          headerTitle: "Accueil",
           headerLeft: () => <HeaderLeftProfile />,
         }}
       />

@@ -18,7 +18,7 @@ export default function ProfileNavigator() {
         component={ProfileScreen}
         options={{
           headerLeft: () => (
-            <Username isVerified={true} userName={"Pierre Sedo"} />
+            <Username isVerified={true} userName={"Pierro236"} />
           ),
           headerTitle: "",
         }}
@@ -28,7 +28,7 @@ export default function ProfileNavigator() {
         component={FollowerScreen}
         options={{
           headerLeft: () => (
-            <Username isVerified={true} userName={"Pierre Sedo"} />
+            <Username isVerified={true} userName={"Pierro236"} />
           ),
           headerTitle: "",
         }}
@@ -38,7 +38,7 @@ export default function ProfileNavigator() {
         component={FollowingScreen}
         options={{
           headerLeft: () => (
-            <Username isVerified={true} userName={"Pierre Sedo"} />
+            <Username isVerified={true} userName={"Pierro236"} />
           ),
           headerTitle: "",
         }}

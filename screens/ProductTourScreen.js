@@ -113,7 +113,7 @@ const ProductTourScreen = () => {
 
             <View style={styles.actionContainer}>
               <TouchableOpacity
-                onPress={() => navigation.navigate("Setup")}
+                onPress={() => navigation.navigate("Register")}
                 style={styles.action1}
               >
                 <Text

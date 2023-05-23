@@ -4,6 +4,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Pressable,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import CustomTextInput from "../components/CustomTextInput";
@@ -11,7 +12,6 @@ import SubmitButton from "../components/SubmitButton";
 import Colors from "../constants/Colors";
 import { Entypo } from "@expo/vector-icons";
 import arcs from "../assets/icons/arcs.png";
-import { Image } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 
 const SetupScreen = ({ navigation }) => {
@@ -19,7 +19,6 @@ const SetupScreen = ({ navigation }) => {
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      // mediaTypes: ImagePicker.MediaTypeOptions.All,
       allowsEditing: true,
       aspect: [1, 1],
       quality: 1,
