@@ -7,7 +7,7 @@ const NumberText = ({ number, text, onPress }) => {
       <Text style={{ fontSize: 18, fontWeight: "bold", textAlign: "center" }}>
         {number}
       </Text>
-      <Text style={{ fontSize: 11, textAlign: "center" }}>{text}</Text>
+      <Text style={{ fontSize: 9, textAlign: "center" }}>{text}</Text>
     </Pressable>
   );
 };

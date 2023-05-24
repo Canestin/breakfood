@@ -37,6 +37,49 @@ const fakeRecipeData = [
   },
 ];
 
+const favRecipeData = [
+  {
+    id: "P1",
+    image: require("../assets/images/recipe4.png"),
+    title: "Toast fruité aux bleuets",
+    time: 20,
+    ingredients: 18,
+    likes: 6047,
+    comments: 1303,
+  },
+  {
+    id: "P2",
+    image: require("../assets/images/recipe4.png"),
+    title: "Toast fruité aux bleuets",
+    time: 20,
+    ingredients: 18,
+    likes: 6047,
+    comments: 1303,
+  },
+  {
+    id: "P3",
+    image: require("../assets/images/recipe4.png"),
+    title: "Toast fruité aux bleuets",
+    time: 20,
+    ingredients: 18,
+    likes: 6047,
+    comments: 1303,
+  },
+  {
+    id: "P4",
+    image: require("../assets/images/recipe4.png"),
+    title: "Toast fruité aux bleuets",
+    time: 20,
+    ingredients: 18,
+    likes: 6047,
+    comments: 1303,
+  },
+];
+
+const favRecipes = favRecipeData.concat(favRecipeData).map((item, i) => {
+  return { ...item, id: item.id.replace(/P\d+/, "P" + i) };
+});
+
 const multipleRecipeData = fakeRecipeData
   .concat(fakeRecipeData)
   .concat(fakeRecipeData)
@@ -44,4 +87,4 @@ const multipleRecipeData = fakeRecipeData
     return { ...item, id: item.id.replace(/P\d+/, "P" + i) };
   });
 
-export { fakeRecipeData, multipleRecipeData };
+export { fakeRecipeData, multipleRecipeData, favRecipes };

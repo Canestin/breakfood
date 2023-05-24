@@ -12,6 +12,7 @@ import Recipe from "./Recipe";
 import SubmitButton from "./SubmitButton";
 import Username from "./Username";
 import FollowerItem from "./FollowerItem";
+import UserProfile from "./UserProfile";
 
 export {
   BackButton,
@@ -28,4 +29,5 @@ export {
   SubmitButton,
   Username,
   FollowerItem,
+  UserProfile,
 };

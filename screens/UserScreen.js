@@ -1,23 +1,13 @@
-import { View, Text, StyleSheet, Dimensions } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
+import { UserProfile } from "../components";
 
 const UserScreen = () => {
   const route = useRoute();
   const { userId } = route.params;
-  console.log("userId", userId);
-  return (
-    <View style={styles.container}>
-      <Text
-        style={{
-          fontSize: 26,
-          fontWeight: "700",
-        }}
-      >
-        UserId : {userId}
-      </Text>
-    </View>
-  );
+
+  return <UserProfile userId={userId} />;
 };
 
 export default UserScreen;

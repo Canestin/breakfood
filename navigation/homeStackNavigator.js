@@ -33,6 +33,7 @@ export default function HomeStackNavigator() {
         name="PostDetails"
         component={PostDetailScreen}
         options={{
+          headerTitle: "Recette",
           headerLeft: () => <BackButton />,
         }}
       />
