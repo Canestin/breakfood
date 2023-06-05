@@ -114,6 +114,7 @@ const ProductTourScreen = () => {
             <View style={styles.actionContainer}>
               <TouchableOpacity
                 onPress={() => navigation.navigate("Register")}
+                // onPress={() => navigation.navigate("Setup")}
                 style={styles.action1}
               >
                 <Text
@@ -123,23 +124,29 @@ const ProductTourScreen = () => {
                     fontWeight: "600",
                   }}
                 >
-                  S'inscrire avec l'email
+                  S'inscrire avec le numéro de tel
                 </Text>
               </TouchableOpacity>
               <View style={styles.action2}>
-                <View style={styles.action2Item}>
+                <Pressable
+                  onPress={() => alert("Trop de protocol...")}
+                  style={styles.action2Item}
+                >
                   <Image
                     style={styles.icon}
                     source={require("../assets/icons/google.png")}
                   />
-                </View>
-                <View style={styles.action2Item}>
+                </Pressable>
+                <Pressable
+                  onPress={() => alert("Trop de protocol...")}
+                  style={styles.action2Item}
+                >
                   <AntDesign name="apple1" size={27} color="black" />
-                </View>
+                </Pressable>
               </View>
               <View style={styles.login}>
                 <Text>Déjà un compte ? </Text>
-                <Pressable onPress={() => navigation.navigate("Login")}>
+                <Pressable onPress={() => navigation.navigate("Setup")}>
                   <Text style={{ fontWeight: "bold" }}>Se connecter </Text>
                 </Pressable>
               </View>
