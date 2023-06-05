@@ -4,15 +4,12 @@ import { useSelector } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 
 const HeaderLeftProfile = () => {
-  const { avatar, color } = useSelector((state) => state.avatar);
+  const { avatar } = useSelector((state) => state.user);
   const navigation = useNavigation();
   return (
     <View>
       <Pressable onPress={() => navigation.navigate("Profile")}>
-        <Image
-          style={[styles.img, { backgroundColor: color ? color : "white" }]}
-          source={avatar}
-        />
+        <Image style={[styles.img]} source={{ uri: avatar }} />
       </Pressable>
     </View>
   );

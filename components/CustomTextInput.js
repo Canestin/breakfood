@@ -3,8 +3,14 @@ import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 
-const CustomTextInput = ({ height, width, type, placeholder }) => {
-  const [item, setItem] = useState("");
+const CustomTextInput = ({
+  height,
+  width,
+  type,
+  placeholder,
+  value,
+  onChangeText,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [isFocusedPass, setIsFocusedPass] = useState(false);
   const [protectPassword, setprotectPassword] = useState(true);
@@ -43,8 +49,8 @@ const CustomTextInput = ({ height, width, type, placeholder }) => {
         <TextInput
           style={styles.inputStylePass}
           placeholder={placeholder}
-          onChangeText={setItem}
-          value={item}
+          onChangeText={onChangeText}
+          value={value}
           onFocus={handleFocusPass}
           onBlur={handleBlurPass}
           secureTextEntry={protectPassword}
@@ -59,8 +65,8 @@ const CustomTextInput = ({ height, width, type, placeholder }) => {
       <TextInput
         style={inputStyle}
         placeholder={placeholder}
-        onChangeText={setItem}
-        value={item}
+        onChangeText={onChangeText}
+        value={value}
         onFocus={handleFocus}
         onBlur={handleBlur}
       />
