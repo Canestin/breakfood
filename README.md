@@ -1,5 +1,6 @@
 # BreakFood - Manuel de déploiement
 
+<br>
 <div align="center">
 <img src="https://raw.githubusercontent.com/Canestin/assets/main/img/breakfood.png" alt="Logo BreakFood" width="300">
 </div>
