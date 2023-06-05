@@ -15,6 +15,21 @@ Ce projet est une application mobile de partage de recettes équilibrées, déve
 - Conseils nutritionnels personnalisés en fonction du profil de santé de l'utilisateur.
 - Fonctionnalité de création et de partage de recettes par les utilisateurs.
 
+## Lancement de l'Application
+
+Si vous souhaitez juste lancer le projet pour le voir, je vous invite à :
+
+- Télécharger l'Application mobile Expo Go
+  - App Store : https://apps.apple.com/fr/app/expo-go/id982107779
+  - Play Store : https://play.google.com/store/apps/details?id=host.exp.exponent&hl=fr&gl=US
+- Scanner le Code QR Suivant (vous serez redirigez vers l'Application Expo Go tétéchargée précédemment et l'App se lancera)
+
+<br>
+<div align="left">
+<img src="https://raw.githubusercontent.com/Canestin/assets/main/img/breakfood-qr-code.png" alt="Logo BreakFood" width="200">
+</div>
+<br>
+
 ## Outils utilisés
 
 - React Native : framework de développement d'applications mobiles.
@@ -27,8 +42,8 @@ Ce projet est une application mobile de partage de recettes équilibrées, déve
 
 Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur votre machine :
 
-- Node.js : version 12.x ou supérieure
-- NPM : version 6.x ou supérieure
+- Node.js : version 16.x ou supérieure
+- NPM : version 8.x ou supérieure
 
 ## Installation
 
@@ -41,7 +56,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 ### variables d'environnement nécessaires
 
-| Method       | Type   | Description                                                                                                                                                                                                                                      |
+| Variable     | Type   | Description                                                                                                                                                                                                                                      |
 | ------------ | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | SUPABASE_URL | String | L'URL de connexion à la base de données Supabase. Assurez-vous de fournir l'URL correcte pour établir une connexion réussie.                                                                                                                     |
 | SUPABASE_KEY | String | La clé d'API nécessaire pour accéder à la base de données Supabase. Cette clé vous permettra d'authentifier et d'autoriser les requêtes vers la base de données. Veillez à garder cette clé confidentielle et à ne pas la partager publiquement. |
