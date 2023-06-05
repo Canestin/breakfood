@@ -1,8 +1,11 @@
 import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
-import { useColorScheme } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { Dimensions, View } from "react-native";
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from "@react-navigation/stack";
 import {
   InitialScreen,
   LoginScreen,
@@ -11,19 +14,19 @@ import {
   ResetPasswordScreen,
   ProductTourScreen,
   SetupScreen,
+  CodeVerifScreen,
 } from "../screens";
 import TabsNavigator from "./tabsNavigator";
 
+const { height } = Dimensions.get("screen");
 const Stack = createStackNavigator();
 
 export default function AppNavigator() {
-  const colorScheme = useColorScheme();
-
   return (
     <NavigationContainer>
       <StatusBar style="dark" />
-      <Stack.Navigator initialRouteName="TabsNavigator">
-        {/* <Stack.Navigator initialRouteName="Initial"> */}
+      {/* <Stack.Navigator initialRouteName="TabsNavigator"> */}
+      <Stack.Navigator initialRouteName="Initial">
         <Stack.Screen
           name="Initial"
           component={InitialScreen}
@@ -50,6 +53,19 @@ export default function AppNavigator() {
           component={RegisterScreen}
           options={{
             headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="CodeVerif"
+          component={CodeVerifScreen}
+          options={{
+            headerLeft: () => <></>,
+            title: "Code de vérification",
+            cardStyleInterpolator:
+              CardStyleInterpolators.forModalPresentationIOS,
+            gestureEnabled: true,
+            gestureDirection: "vertical",
+            gestureResponseDistance: height,
           }}
         />
 

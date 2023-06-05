@@ -14,6 +14,7 @@ import FollowerScreen from "./FollowerScreen";
 import NotificationsScreen from "./NotificationsScreen";
 import AddPostScreen1 from "./AddPostScreen1";
 import FollowingScreen from "./FollowingScreen";
+import CodeVerifScreen from "./CodeVerifScreen";
 
 export {
   InitialScreen,
@@ -32,4 +33,5 @@ export {
   FollowingScreen,
   NotificationsScreen,
   AddPostScreen1,
+  CodeVerifScreen,
 };
