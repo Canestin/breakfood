@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 import Colors from "../constants/Colors";
 import soup from "../assets/images/soup.png";
 import fruitmer from "../assets/images/fruitmer.png";
@@ -10,12 +10,22 @@ import { multiplePostData } from "../data/FakePostData";
 import { useScrollToTop } from "@react-navigation/native";
 import Post from "../components/Post";
 import Category from "../components/Category";
+import * as ScreenOrientation from "expo-screen-orientation";
 
 const HomeScreen = ({ navigation }) => {
   const ref = React.useRef(null);
 
   useScrollToTop(ref);
 
+  useEffect(() => {
+    const unlockAsync = async () => {
+      await ScreenOrientation.unlockAsync(
+        ScreenOrientation.OrientationLock.LANDSCAPE_LEFT
+      );
+    };
+
+    unlockAsync();
+  }, []);
   return (
     <>
       <ScrollView
