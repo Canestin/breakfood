@@ -6,7 +6,7 @@ import {
   ImageBackground,
   Pressable,
 } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { FontAwesome, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
@@ -14,9 +14,20 @@ import { useNavigation } from "@react-navigation/native";
 // In reality, I will only retrieve the Post Id and process everything here
 
 const Post = ({ post }) => {
+  const [liked, setLiked] = useState(false);
+  const [numberOflikes, setNumberOflikes] = useState(0);
   if (!post) return <View style={styles.skeletonPost} />;
   const navigation = useNavigation();
 
+  useEffect(() => {
+    setLiked(post.liked);
+    setNumberOflikes(post.likes);
+  }, [post.id]);
+
+  const handleLiked = () => {
+    setLiked(!liked);
+    setNumberOflikes((l) => (liked ? l - 1 : l + 1));
+  };
   return (
     <View style={styles.post}>
       <View style={styles.postHeader}>
@@ -101,15 +112,18 @@ const Post = ({ post }) => {
         </Pressable>
       </ImageBackground>
       <View style={styles.postFooter}>
-        <View style={styles.postFooterItem}>
-          <FontAwesome name="heart-o" size={24} color="black" />
-          <Text style={styles.postFooterItemText}>{post.likes} J'aime</Text>
-        </View>
+        <Pressable style={styles.postFooterItem} onPress={handleLiked}>
+          <FontAwesome
+            name={liked ? "heart" : "heart-o"}
+            color={liked ? "red" : "black"}
+            size={24}
+          />
+          <Text style={styles.postFooterItemText}>{numberOflikes} J'aime</Text>
+        </Pressable>
         <View style={styles.postFooterItem}>
           <Text style={styles.postFooterItemText}>
             {post.comments} commentaires
           </Text>
-          {/* <FontAwesome name="bookmark-o" size={24} color="black" /> */}
         </View>
       </View>
     </View>
