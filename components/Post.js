@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Image,
   ImageBackground,
+  TouchableOpacity,
   Pressable,
 } from "react-native";
 import React, { useEffect, useState } from "react";
@@ -15,18 +16,25 @@ import { useNavigation } from "@react-navigation/native";
 
 const Post = ({ post }) => {
   const [liked, setLiked] = useState(false);
+  const [saved, setSaved] = useState(false);
   const [numberOflikes, setNumberOflikes] = useState(0);
   if (!post) return <View style={styles.skeletonPost} />;
   const navigation = useNavigation();
 
   useEffect(() => {
-    setLiked(post.liked);
-    setNumberOflikes(post.likes);
+    if (post) {
+      setLiked(post.liked);
+      setSaved(post.saved);
+      setNumberOflikes(post.likes);
+    }
   }, [post.id]);
 
   const handleLiked = () => {
     setLiked(!liked);
-    setNumberOflikes((l) => (liked ? l - 1 : l + 1));
+    setNumberOflikes((nl) => (liked ? nl - 1 : nl + 1));
+  };
+  const handleSaved = () => {
+    setSaved(!saved);
   };
   return (
     <View style={styles.post}>
@@ -54,7 +62,12 @@ const Post = ({ post }) => {
             />
           )}
         </Pressable>
-        <FontAwesome name="bookmark-o" size={24} color="black" />
+        <FontAwesome
+          name={saved ? "bookmark" : "bookmark-o"}
+          size={24}
+          color="black"
+          onPress={handleSaved}
+        />
       </View>
       <ImageBackground source={post.image} style={styles.recipe}>
         <Pressable
@@ -77,13 +90,7 @@ const Post = ({ post }) => {
               paddingHorizontal: 30,
             }}
           >
-            <View
-              style={
-                {
-                  // backgroundColor: "red",
-                }
-              }
-            >
+            <View>
               <View
                 style={{
                   flexDirection: "row",
@@ -121,9 +128,18 @@ const Post = ({ post }) => {
           <Text style={styles.postFooterItemText}>{numberOflikes} J'aime</Text>
         </Pressable>
         <View style={styles.postFooterItem}>
-          <Text style={styles.postFooterItemText}>
-            {post.comments} commentaires
-          </Text>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate({
+                name: "Comments",
+                params: { postId: post.id },
+                merge: true,
+              })
+            }
+            style={styles.postFooterItemText}
+          >
+            <Text>{post.comments} commentaires</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

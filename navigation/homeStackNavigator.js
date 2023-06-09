@@ -1,5 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen, PostDetailScreen, UserScreen } from "../screens";
+import {
+  CommentsScreen,
+  HomeScreen,
+  PostDetailScreen,
+  UserScreen,
+} from "../screens";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
 import BackButton from "../components/BackButton";
 
@@ -34,6 +39,14 @@ export default function HomeStackNavigator() {
         component={PostDetailScreen}
         options={{
           headerTitle: "Recette",
+          headerLeft: () => <BackButton />,
+        }}
+      />
+      <Stack.Screen
+        name="Comments"
+        component={CommentsScreen}
+        options={{
+          headerTitle: "Commentaires",
           headerLeft: () => <BackButton />,
         }}
       />
