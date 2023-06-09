@@ -7,13 +7,15 @@ import {
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 import Colors from "../constants/Colors";
-import CustomTextInput from "../components/CustomTextInput";
-import * as ImagePicker from "expo-image-picker";
-import { Entypo } from "@expo/vector-icons";
 import SubmitButton from "../components/SubmitButton";
 import { Picker } from "@react-native-picker/picker";
+import { useDispatch } from "react-redux";
+import {
+  setSelectedPostCValue,
+  setSelectedPostPValue,
+  setSelectedPostDifficultyValue,
+} from "../redux/postSlice";
 
 const AddPostScreen2 = ({ navigation }) => {
   const [selectedPValue, setSelectedPValue] = useState(1);
@@ -35,6 +37,8 @@ const AddPostScreen2 = ({ navigation }) => {
     setSelectedDifficultyValue(itemValue);
     setIsDifficultySelected(true);
   };
+
+  const dispatch = useDispatch();
 
   return (
     <View style={styles.container}>
@@ -133,7 +137,12 @@ const AddPostScreen2 = ({ navigation }) => {
           height={"32%"}
           width={"60%"}
           text={"Next"}
-          onPress={() => navigation.navigate("AddPost3")}
+          onPress={() => {
+            dispatch(setSelectedPostDifficultyValue(selectedDifficultyValue));
+            dispatch(setSelectedPostPValue(selectedPValue));
+            dispatch(setSelectedPostCValue(selectedCValue));
+            navigation.navigate("AddPost3");
+          }}
         />
       </View>
     </View>

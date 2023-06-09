@@ -2,11 +2,10 @@ import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Colors from "../constants/Colors";
-import CustomTextInput from "../components/CustomTextInput";
-import * as ImagePicker from "expo-image-picker";
-import { Entypo } from "@expo/vector-icons";
 import SubmitButton from "../components/SubmitButton";
 import IngredientInput from "../components/IngredientInput";
+import { useDispatch, useSelector } from "react-redux";
+import postSlice from "../redux/postSlice";
 
 const AddPostScreen3 = ({ navigation }) => {
   const [ingredients, setIngredients] = useState([]);
@@ -20,6 +19,12 @@ const AddPostScreen3 = ({ navigation }) => {
     updatedIngredients[index] = ingredientData;
     setIngredients(updatedIngredients);
   };
+
+  const dispatch = useDispatch();
+
+  dispatch(setIngredients(ingredients));
+
+  const data = useSelector(postSlice);
 
   return (
     <View style={styles.container}>
@@ -49,7 +54,7 @@ const AddPostScreen3 = ({ navigation }) => {
           width={"60%"}
           text={"Next"}
           onPress={() => {
-            console.log(ingredients);
+            console.log(data);
           }}
         />
       </View>

@@ -1,14 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Colors from "../constants/Colors";
 import CustomTextInput from "../components/CustomTextInput";
 import * as ImagePicker from "expo-image-picker";
 import { Entypo } from "@expo/vector-icons";
 import SubmitButton from "../components/SubmitButton";
+import postSlice, { setImgPost, setPostTitle } from "../redux/postSlice";
 
 const AddPostScreen1 = ({ navigation }) => {
   const [imgPost, setimgPost] = useState(null);
   const [title, setTitle] = useState(null);
+  const dispatch = useDispatch();
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -31,8 +34,9 @@ const AddPostScreen1 = ({ navigation }) => {
       alert("Vous devez ajouter une photo pour continuer 🙂");
       return;
     }
+    dispatch(setImgPost(imgPost));
+    dispatch(setPostTitle(title));
     navigation.navigate("AddPost2");
-    console.log({ title });
   };
   return (
     <View style={styles.container}>

@@ -44,11 +44,12 @@ const IngredientInput = ({ placeholder, onIngredientChange }) => {
             style={styles.picker}
             onValueChange={handleChange}
           >
-            {new Array(60).fill(1).map((_, index) => (
+            {new Array(200).fill(1).map((_, index) => (
               <Picker.Item
-                label={`${index + 1} g`}
-                value={index + 1}
+                label={`${(index + 1) * 5}`}
+                value={(index + 1) * 5}
                 key={index}
+                style={styles.text}
               />
             ))}
           </Picker>
@@ -67,6 +68,7 @@ const styles = StyleSheet.create({
   },
   picker: {
     width: "100%",
+    fontSize: 11,
   },
   pickerContainer: {
     width: "27%",
