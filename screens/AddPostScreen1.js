@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/native";
 import Colors from "../constants/Colors";
 import CustomTextInput from "../components/CustomTextInput";
 import * as ImagePicker from "expo-image-picker";
 import { Entypo } from "@expo/vector-icons";
 import SubmitButton from "../components/SubmitButton";
 
-const AddPostScreen1 = () => {
-  const [imgProfile, setImgProfile] = useState(null);
+const AddPostScreen1 = ({ navigation }) => {
+  const [imgPost, setimgPost] = useState(null);
+  const [title, setTitle] = useState(null);
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -18,34 +18,55 @@ const AddPostScreen1 = () => {
     });
 
     if (!result.canceled) {
-      setImgProfile(result.assets[0].uri);
+      setimgPost(result.assets[0].uri);
     }
   };
-  const navigation = useNavigation();
 
+  const handleNext = () => {
+    if (!title) {
+      alert("Vous devez saisir le titre pour continuer 🙂 ");
+      return;
+    }
+    if (!imgPost) {
+      alert("Vous devez ajouter une photo pour continuer 🙂");
+      return;
+    }
+    navigation.navigate("AddPost2");
+    console.log({ title });
+  };
   return (
     <View style={styles.container}>
       <View style={styles.titleView}>
         <Text style={styles.title}>Titre</Text>
       </View>
       <View style={styles.titleInputContainer}>
-        <CustomTextInput height={"20%"} placeholder={"Titre"} />
+        <CustomTextInput
+          height={"20%"}
+          placeholder={"Titre"}
+          value={title}
+          onChangeText={(value) => setTitle(value)}
+        />
         <TouchableOpacity onPress={pickImage} style={styles.imgContainer}>
-          {!imgProfile && (
+          {!imgPost && (
             <Entypo name="upload-to-cloud" size={50} color="black" />
           )}
-          {!imgProfile && (
+          {!imgPost && (
             <Text style={{ fontSize: 16 }}>
               Téléversez une photo pour votre post
             </Text>
           )}
-          {imgProfile && (
-            <Image source={{ uri: imgProfile }} style={styles.imgProfile} />
+          {imgPost && (
+            <Image source={{ uri: imgPost }} style={styles.imgPost} />
           )}
         </TouchableOpacity>
       </View>
       <View style={styles.titleSubmit}>
-        <SubmitButton height={"35%"} width={"60%"} text={"Next"} />
+        <SubmitButton
+          height={"35%"}
+          width={"60%"}
+          text={"Next"}
+          onPress={handleNext}
+        />
       </View>
     </View>
   );
@@ -83,7 +104,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     gap: 20,
   },
-  imgProfile: {
+  imgPost: {
     height: "100%",
     width: "100%",
     resizeMode: "cover",

@@ -1,5 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import { AddPostScreen1 } from "../screens";
+import { AddPostScreen2 } from "../screens";
+import { AddPostScreen3 } from "../screens";
 import HeaderLeftProfile from "../components/HeaderLeftProfile";
 import BackButton from "../components/BackButton";
 
@@ -20,6 +22,22 @@ export default function AddPostStackNav() {
         options={{
           headerTitle: "Nouvelle publication",
           headerLeft: () => <HeaderLeftProfile />,
+        }}
+      />
+      <Stack.Screen
+        name="AddPost2"
+        component={AddPostScreen2}
+        options={{
+          headerTitle: "Nouvelle publication",
+          headerLeft: () => <BackButton />,
+        }}
+      />
+      <Stack.Screen
+        name="AddPost3"
+        component={AddPostScreen3}
+        options={{
+          headerTitle: "Nouvelle publication",
+          headerLeft: () => <BackButton />,
         }}
       />
     </Stack.Navigator>
