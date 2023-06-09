@@ -29,7 +29,6 @@ Si vous souhaitez juste lancer le projet pour le voir, je vous invite à :
 <div align="left">
 <img src="https://raw.githubusercontent.com/Canestin/assets/main/img/breakfood-qr-code.png" alt="Logo BreakFood" width="200">
 </div>
-<br>
 
 ## Outils utilisés
 
@@ -53,7 +52,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 3. Exécutez la commande `npm install` pour installer les dépendances du projet.
 4. Configurez Supabase & Twilio : https://supabase.com/docs/guides/auth/phone-login/twilio
 5. Créez un fichier `.env` à la racine du projet et configurez les variables d'environnement nécessaires (par exemple, les informations d'accès à Supabase et Twilio).
-6. Exécutez la commande `expo start` pour lancer l'application en mode de développement.
+6. Exécutez la commande `expo start` pour lancer l'application en mode développement.
 
 ### variables d'environnement nécessaires
 
@@ -64,7 +63,7 @@ Avant de commencer, assurez-vous d'avoir les éléments suivants installés sur 
 
 ## Configuration
 
-Avant de lancer l'application en mode de production, assurez-vous de configurer les paramètres appropriés pour l'environnement de production, tels que les clés d'API, les URL de serveur, etc. Vous pouvez généralement les définir dans le fichier `.env` ou dans les fichiers de configuration spécifiques.
+Avant de lancer l'application en mode production, assurez-vous de configurer les paramètres appropriés pour l'environnement de production, tels que les clés d'API, les URL de serveur, etc. Vous pouvez généralement les définir dans le fichier `.env` ou dans les fichiers de configuration spécifiques.
 
 ## Déploiement
 
@@ -80,7 +79,5 @@ Suivez les instructions fournies par Expo pour compléter le processus de déplo
 Ce projet est sous licence MIT. Veuillez consulter le fichier [LICENSE](LICENSE) pour plus d'informations sur les conditions de licence.
 
 ---
-
-Merci d'avoir choisi notre application de partage de recettes équilibrées ! Nous espérons que vous l'apprécierez et qu'elle vous aidera à maintenir une alimentation saine et délicieuse. Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter.
 
 Bon appétit !

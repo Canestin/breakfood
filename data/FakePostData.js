@@ -8,6 +8,7 @@ const fakePostData = [
     likes: 1207,
     comments: 103,
     liked: true,
+    saved: false,
     user: {
       id: "N1",
       username: "antonio",
@@ -24,6 +25,7 @@ const fakePostData = [
     likes: 2154,
     comments: 210,
     liked: false,
+    saved: true,
     user: {
       id: "N2",
       username: "santana",
@@ -40,6 +42,7 @@ const fakePostData = [
     likes: 1511,
     comments: 152,
     liked: true,
+    saved: false,
     user: {
       id: "N4",
       username: "jada",
@@ -56,6 +59,7 @@ const fakePostData = [
     likes: 6047,
     comments: 1303,
     liked: false,
+    saved: false,
     user: {
       id: "N3",
       username: "john",
